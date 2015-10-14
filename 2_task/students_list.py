@@ -39,3 +39,5 @@ for i in lst:
     res_dict[n].append(i)
 for i in res_dict.items():
     print(i)
+
+#test auto push git
