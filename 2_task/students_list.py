@@ -33,11 +33,26 @@ print('колличество студентов у которых  в  имен
 
 print('__________2/5__________')
 
-res_dict = defaultdict(list)
-for i in lst:
-    n,s = i.split()
-    res_dict[n].append(i)
-for i in res_dict.items():
-    print(i)
+res_list = []
 
+lst.sort()
+#print(lst)
+temp_list = []
+for i in lst:
+
+
+    #print(i.split()[0])
+    if len(temp_list) == 0:
+        temp_list.append(i)
+        #print(temp_list,'111111111')
+        #print(temp_list[0].split()[0])
+    elif i.split()[0] ==  temp_list[0].split()[0]: # если поставить вместо ==  is , то всё ломается . встречается подобное  часто.  почему ???
+        temp_list.append(i)
+        #print(temp_list,'2222222222')
+    else:
+        res_list.append(temp_list)
+        temp_list = []
+        temp_list.append(i)
+        #print(temp_list,'33333333')
+print(res_list,'!!!!!!!!!')
 #test auto push git
