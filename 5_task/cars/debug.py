@@ -59,8 +59,35 @@ def filt_by_pow(data):
             continue
 
 
-def filt_by_str():
-    pass
+def filt_by_name(data):
 
-def filt_by_name():
-    pass
+    type__sub_sort = input('хотите найти  по:\n 1 - вхождению  части слова  в имя модели  \n 2 - точному совпадению  модели \n ' )
+    if type__sub_sort == '1':
+        while 1:
+            val=input('введите часть слова \n')
+            if val.isalpha():
+
+                new_data = {i[0]:i[1] for i in  data.items() if val in  i[0]}
+                print(new_data)
+                return new_data
+                break
+            else:
+                print('не верной указаны параметры фильтра(скорее всего не буквы)')
+                continue
+
+    elif type__sub_sort == '2':
+        val=input('введите искомую модель \n')
+        while 1:
+            if val.isalpha():
+                if val.isalpha():
+                    new_data = {i[0]:i[1] for i in  data.items() if val in  i[0]}
+                    return new_data
+                    break
+            else:
+                print('не верной указаны параметры фильтра(скорее всего не буквы)')
+                continue
+    else:
+        print(' Необходимо выбрать цыфры соответствующих фильтров')
+        filt_by_name(data)
+
+
