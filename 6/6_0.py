@@ -2,6 +2,51 @@
 #генераторы выражение генератор  в () внутри обычный [] НО С ОТЛОЖЕНЫМ ВЫПОЛНЕНИЕМ.
 # ВЫЧЕСЛЯЮТСЯ ПО ЭЛЕМЕНТНО.
 import sys
+# расширеный генератор
+studs = [
+    'ivanov',
+    'petrov'
+]
+def gen():
+    for i  in range(10):
+        x= yield
+        print(x)
+
+gen = gen()
+next(gen) # так надо
+gen.send(333)
+gen.send(3343)
+
+
+
+
+sys.exit()
+
+
+
+
+
+
+
+
+
+studs = [
+    'ivanov',
+    'petrov'
+]
+gen = lambda  : (x for x  in studs)
+
+
+for i  in gen():
+    print(i)
+
+for i  in gen():
+    print(i)
+
+for i  in gen():
+    print(i)
+
+
 
 
 
