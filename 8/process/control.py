@@ -17,7 +17,7 @@ def stop(func):
 
 def create_pars():
     parser = argparse.ArgumentParser()
-    parser.add_argument('control', nargs = '?' )
+    parser.add_argument('--control', '-c',  nargs = '*' )
 
     return parser
 
@@ -25,7 +25,7 @@ def create_pars():
 if __name__ == '__main__':
     parser = create_pars()
     namespace = parser.parse_args()
-    if namespace.control == ['stop']:
+    if namespace.control != None and  namespace.control[0]== 'stop':
         print('!!!!!!!!')
     print(namespace.control)
 
