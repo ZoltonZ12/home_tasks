@@ -41,7 +41,7 @@ class Duck(Animal):
         super().__init__()
         self.voice = 'krya-krya'
         self.life_age_year = 5
-        self.product = 'egg'
+        self.product = 'eggs'
         self.product_per_mounth = int(random.randrange(20*30,30*30))
 
 
@@ -64,23 +64,28 @@ class Dog(Animal):
         self.product = 'garde'
         self.product_per_mounth = int(random.randrange(1,101))
 
-dog = Dog()
-print(dog.voice, dog.sex)
+
 
 class Farm():
 
     def __init__(self, dogs = 0, ducks = 2, cows = 2):
         self.list_dogs = []
+        self.list_ducks = []
+        self.list_cows = []
         for i in range(dogs):
             self.list_dogs.append(Dog())
+        for i in range(dogs):
+            self.list_ducks.append(Duck())
+        for i in range(dogs):
+            self.list_cows.append(Cow())
 
     def month_has_pass(self):
         pass
 
 
 
-farm1 = Farm(dogs=3, cows=4)
+farm1 = Farm(dogs=1, cows=4)
 
-print(farm1.list_dogs[1].sex)
+print(farm1.list_ducks[0].product)
 
 
