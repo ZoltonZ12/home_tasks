@@ -10,7 +10,7 @@ for  i in root.iter('dog'):# iter поиск по  имени тега
     i.set('name_new','!!!!!')
     print(i.attrib['name'])
     print(i.text.strip())
-root_tree.write('test.xml')
+root_tree.write('test.xml', encoding='utf-8')
 
 #print(i) рекрусивность . из  функции вызвать в цикле саму функцию, чтобы пробежать по  например детей дерева.
 
