@@ -65,6 +65,11 @@ class Duck(Animal):
 
         self.product_per_mounth = int(random.randrange(20,30))
 
+    def __repr__(self):
+        return 'утка'
+
+    def __str__(self):
+        return 'утка'
 
 
 class Cow(Animal):
@@ -77,10 +82,10 @@ class Cow(Animal):
         self.product_per_mounth = int(random.randrange(7*30,16*30))
 
     def __repr__(self):
-        print('корова')
+        return 'корова'
 
     def __str__(self):
-        print('корова')
+        return 'корова'
 
 class Dog(Animal):
     #super().voice = 'Gav-gav-gav-gav-gav' так не работает . почему ???
@@ -92,7 +97,11 @@ class Dog(Animal):
         self.life_age_year = 15
 
         self.product_per_mounth = int(random.randrange(1,101))
+    def __repr__(self):
+        return 'собака'
 
+    def __str__(self):
+        return 'собака'
 
 
 class Farm(ABC_Animal):
